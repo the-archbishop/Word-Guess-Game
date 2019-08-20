@@ -18,6 +18,15 @@ body {
     line-height: 100px;
 }
 
+#explosion {
+    background-image: url('../images/kaboom.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+}
+
 .border {
     border: 2px solid red;
 }
@@ -30,4 +39,5 @@ body {
 .imgflip {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+    vertical-align: baseline;
 }

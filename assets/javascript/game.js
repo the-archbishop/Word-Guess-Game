@@ -34,13 +34,13 @@ var display = dashes.join(' ');
 document.getElementById("wordToGuess").innerHTML = display;
 
 // Set lives
-var lives = 5;
+var lives = 10;
 // Set remaining letters
 var remLetters = solve.length;
 // Define emptty array for user guesses
 var userGuesses = [];
 // Define img url
-var imgSrc = '<img src="assets/images/' + solve + '.gif" alt="" width="200px">';
+var imgSrc = '<img src="assets/images/' + solve + '.gif" alt="">';
 // Define pokemon cry
 var pokemonCry = "assets/audio/" + solve + ".wav"
 var audio = new Audio(pokemonCry);
