@@ -11,3 +11,12 @@ body {
 #headerImg {
     width: 40%;
 }
+
+.border {
+    border: 2px solid red;
+}
+
+.imgflip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
