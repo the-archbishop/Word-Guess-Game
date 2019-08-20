@@ -6,16 +6,27 @@ body {
     background-size: cover;
     overflow-y: auto;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 #headerImg {
     width: 40%;
+    padding-bottom: 50px;
+}
+
+#wordToGuess {
+    line-height: 100px;
 }
 
 .border {
     border: 2px solid red;
 }
 
+.spacer {
+    padding-left: 50px;
+}
+
+/* Flips Pokemon images */
 .imgflip {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
