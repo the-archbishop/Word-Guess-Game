@@ -40,7 +40,7 @@ var remLetters = solve.length;
 // Define emptty array for user guesses
 var userGuesses = [];
 // Define img url
-var imgSrc = '<img src="assets/images/' + solve + '.gif" alt="">';
+var imgSrc = '<img src="assets/images/' + solve + '.gif" class="img-fluid">';
 // Define pokemon cry
 var pokemonCry = "assets/audio/" + solve + ".wav"
 var audio = new Audio(pokemonCry);
@@ -58,6 +58,7 @@ document.onkeyup = function(event) {
     } else {
         // Add guess to guessed letters pool
         userGuesses = userGuesses + userGuess;
+        document.getElementById("guesses").innerHTML = userGuesses;
 
         // Life handling
         if(solve.includes(userGuess)) {
