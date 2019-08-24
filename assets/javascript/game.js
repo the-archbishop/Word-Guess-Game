@@ -15,7 +15,7 @@ function gameStart() {
     document.getElementById("wordToGuess").innerHTML = display;
 
     // Set lives
-    var lives = 10;
+    var lives = 6;
     // Set remaining letters
     var remLetters = solve.length;
     // Define emptty array for user guesses
