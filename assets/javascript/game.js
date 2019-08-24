@@ -1,3 +1,41 @@
+function gameStart() {
+    
+    // Generate random number between 0 and the number of words in the word bank
+    var rand = Math.floor(Math.random() * wordBank.length);
+
+    // Pick a word from the word bank, based on the random number
+    solve = wordBank[rand];
+
+    // Determine how many letters in the word and display the dashes
+    var dashes = [];
+    for (var i = 0; i < solve.length; i++) { 
+        dashes[i] = "_";
+    }
+    var display = dashes.join(' ');
+    document.getElementById("wordToGuess").innerHTML = display;
+
+    // Set lives
+    var lives = 10;
+    // Set remaining letters
+    var remLetters = solve.length;
+    // Define emptty array for user guesses
+    var userGuesses = [];
+    // Define img url
+    var imgSrc = '<img src="assets/images/' + solve + '.gif" class="img-fluid">';
+    // Define pokemon cry
+    var pokemonCry = "assets/audio/" + solve + ".wav"
+    var audio = new Audio(pokemonCry);
+
+    document.getElementById("lives").innerHTML = lives;
+    return { solve : solve, dashes : dashes, lives: lives, remLetters : remLetters, userGuesses : userGuesses, imgSrc : imgSrc, pokemonCry : pokemonCry, audio : audio };
+}
+
+function reset () {
+    document.getElementById("img").innerHTML = '<img src="assets/images/questionmark.png" class="img-fluid">';
+    document.getElementById("state").innerHTML = ""
+    document.getElementById("guesses").innerHTML = "";
+}
+
 // Original 151 pokemon - minus Farfetch'd and Mr. Mime because of the weird characters
 var wordBank = ["bulbasaur","ivysaur","venusaur","charmander","charmeleon",
 "charizard","squirtle","wartortle","blastoise","caterpie","metapod","butterfree",
@@ -19,33 +57,18 @@ var wordBank = ["bulbasaur","ivysaur","venusaur","charmander","charmeleon",
 "jolteon","flareon","porygon","omanyte","omastar","kabuto","kabutops","aerodactyl",
 "snorlax","articuno","zapdos","moltres","dratini","dragonair","dragonite","mewtwo","mew"];
 
-// Generate random number between 0 and the number of words in the word bank
-var rand = Math.floor(Math.random() * wordBank.length);
-
-// Pick a word from the word bank, based on the random number
-var solve = wordBank[rand];
-
-// Determine how many letters in the word and display the dashes
-var dashes = [];
-for (var i = 0; i < solve.length; i++) { 
-    dashes[i] = "_";
-}
-var display = dashes.join(' ');
-document.getElementById("wordToGuess").innerHTML = display;
-
-// Set lives
-var lives = 10;
-// Set remaining letters
-var remLetters = solve.length;
-// Define emptty array for user guesses
-var userGuesses = [];
-// Define img url
-var imgSrc = '<img src="assets/images/' + solve + '.gif" class="img-fluid">';
-// Define pokemon cry
-var pokemonCry = "assets/audio/" + solve + ".wav"
-var audio = new Audio(pokemonCry);
-
-document.getElementById("lives").innerHTML = lives;
+// Initialize game
+var winCount = 0;
+var loseCount = 0;
+data = gameStart();
+var solve = data.solve;
+var dashes = data.dashes;
+var lives = data.lives;
+var remLetters = data.remLetters;
+var userGuesses = data.userGuesses;
+var imgSrc  = data.imgSrc;
+var pokemonCry = data.pokemonCry;
+var audio = data.audio;
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -93,6 +116,20 @@ document.onkeyup = function(event) {
 
             // Alert the user that they won
             document.getElementById("state").innerHTML ="You won!"
+            
+            // Restart game
+            setTimeout(function(){
+                reset();
+                data = gameStart();
+                solve = data.solve;
+                dashes = data.dashes;
+                lives = data.lives;
+                remLetters = data.remLetters;
+                userGuesses = data.userGuesses;
+                imgSrc  = data.imgSrc;
+                pokemonCry = data.pokemonCry;
+                audio = data.audio;
+            }, 3000);
         }
     }    
 }
