@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>WHO'S THAT POKÉMON: Generation 1</title>
 </head>
 <body>
     <div id="container">
@@ -15,15 +16,29 @@
                 <img src="assets/images/gametitle.png" class="img-fluid" id="headerImg">
             </div>
         </div>
+        <div class="row text-center" id="scoreboard">
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2 h2">
+                <div class="col-md-6">Wins</div>
+                <div class="col-md-6"><span id="wins"></span></div>
+            </div>
+            <div class="col-md-2 h2">
+                <div class="col-md-6">Losses</div>
+                <div class="col-md-6"><span id="losses"></span></div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-3 text-center imgflip" id="explosion">
                 <span id="img" ><img src="assets/images/questionmark.png" class="img-fluid"></span>
             </div>
             <div class="col-md-3 text-center spacer">
-                <span id="wordToGuess"></span>
+                <span class="h1" id="wordToGuess"></span>
                 <p class="lead">Lives Remaining: <span id="lives"></span></p>
-                <br><br>
+                <br>
                 <p class="lead">Already Guessed:</p>
                 <p><span id="guesses"></span></p>
                 <p><span class="h3" id="state"></span></p>

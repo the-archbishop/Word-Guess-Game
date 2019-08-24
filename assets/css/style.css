@@ -10,7 +10,7 @@ body {
 
 #headerImg {
     width: 40%;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 #container {
@@ -18,9 +18,14 @@ body {
     color: #2B2C28;
 }
 
+#scoreboard {
+    font-family: 'VT323', monospace;
+    color: #984447;
+    padding-bottom: 30px;
+}
+
 #wordToGuess {
     line-height: 100px;
-    font-size:2vw;
 }
 
 #explosion {

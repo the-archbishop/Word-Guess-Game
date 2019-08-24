@@ -60,6 +60,8 @@ var wordBank = ["bulbasaur","ivysaur","venusaur","charmander","charmeleon",
 // Initialize game
 var winCount = 0;
 var loseCount = 0;
+document.getElementById("wins").innerHTML = winCount;
+document.getElementById("losses").innerHTML = loseCount;
 
 data = gameStart();
 var solve = data.solve;
@@ -81,7 +83,7 @@ document.onkeyup = function(event) {
     
     // Check if user has guessed the letter already
     if (userGuesses.includes(userGuess)) {
-        document.getElementById("state").innerHTML = "Already guessed " + userGuess + ". Try again.";
+        // Already guessed, do nothing
     } else {
         // Add guess to guessed letters pool
         userGuesses = userGuesses + userGuess;
@@ -103,7 +105,10 @@ document.onkeyup = function(event) {
             // If lives is 0, then user loses
             if (lives === 0) {
                 loseAudio.play();
-                document.getElementById("state").innerHTML ="You lose!"
+                
+                // Tally up losses
+                loseCount++;
+                document.getElementById("losses").innerHTML = loseCount;
 
                 // Restart game
                 setTimeout(function(){
@@ -133,8 +138,9 @@ document.onkeyup = function(event) {
             // Play pokemon audio
             audio.play();
 
-            // Alert the user that they won
-            document.getElementById("state").innerHTML ="You won!"
+            // Tally up wins
+            winCount++;
+            document.getElementById("wins").innerHTML = winCount;
             
             // Restart game
             setTimeout(function(){
@@ -148,7 +154,7 @@ document.onkeyup = function(event) {
                 imgSrc  = data.imgSrc;
                 pokemonCry = data.pokemonCry;
                 audio = data.audio;
-            }, 3000);
+            }, 5000);
         }
     }    
 }
