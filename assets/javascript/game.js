@@ -60,6 +60,7 @@ var wordBank = ["bulbasaur","ivysaur","venusaur","charmander","charmeleon",
 // Initialize game
 var winCount = 0;
 var loseCount = 0;
+
 data = gameStart();
 var solve = data.solve;
 var dashes = data.dashes;
@@ -69,6 +70,9 @@ var userGuesses = data.userGuesses;
 var imgSrc  = data.imgSrc;
 var pokemonCry = data.pokemonCry;
 var audio = data.audio;
+
+
+var loseAudio = new Audio("assets/audio/errorFalse.wav");
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -98,7 +102,22 @@ document.onkeyup = function(event) {
             document.getElementById("lives").innerHTML = lives;
             // If lives is 0, then user loses
             if (lives === 0) {
+                loseAudio.play();
                 document.getElementById("state").innerHTML ="You lose!"
+
+                // Restart game
+                setTimeout(function(){
+                    reset();
+                    data = gameStart();
+                    solve = data.solve;
+                    dashes = data.dashes;
+                    lives = data.lives;
+                    remLetters = data.remLetters;
+                    userGuesses = data.userGuesses;
+                    imgSrc  = data.imgSrc;
+                    pokemonCry = data.pokemonCry;
+                    audio = data.audio;
+                }, 3000);
             }
         }
     
