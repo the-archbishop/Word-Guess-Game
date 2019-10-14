@@ -9,7 +9,7 @@
 This app randomly generates a pokémon to guess from an array of the original 151 pokémon. 
 
 ## Screenshot
-![screenshot](/assets/images/gametitle.png)
+![screenshot](/assets/images/screenshot.jpg)
 
 ## Languages/Technologies Used
 - HTML, CSS, JavaScript
