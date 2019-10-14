@@ -8,9 +8,6 @@
 ## Overview
 This app randomly generates a pokémon to guess from an array of the original 151 pokémon. 
 
-## Screenshot
-![screenshot](/assets/images/screenshot.jpg)
-
 ## Languages/Technologies Used
 - HTML, CSS, JavaScript
 - Bootstrap 4.3.1 (https://getbootstrap.com/docs/4.3)
@@ -35,3 +32,6 @@ The pokémon's picture and and cry will be revealed.
 
 #### Losing
 If the player loses all 6 lives prior to correctly guessing all of the letters, 1 point will be added to the **Losses** tally on the page.
+
+## Screenshot
+![screenshot](/assets/images/screenshot.jpg)
