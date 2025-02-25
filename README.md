@@ -13,7 +13,7 @@ This app randomly generates a pokémon to guess from an array of the original 15
 - Bootstrap 4.3.1 (https://getbootstrap.com/docs/4.3)
 
 ## Getting Started
-Visit https://bflatbader.github.io/Word-Guess-Game/.
+Visit [Who's That Pokémon](https://the-archbishop.github.io/Word-Guess-Game/).
 
 ### Prerequisites
 - An internet browser with JavaScript enabled. 
